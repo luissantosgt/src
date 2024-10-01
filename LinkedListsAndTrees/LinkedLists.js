@@ -12,7 +12,6 @@ class LinkedList{
         this.head = head
     }
 
-
 /* 1. size()
 This method returns the number of nodes present in the linked list. */
      size(){
@@ -32,19 +31,19 @@ clear(){
 
 /* 3. This method returns the last node of the linked list. */
  getLast(){
-    let node = this.head
-    let lastNode = 0;
-    while(node){
-        if(node.next === null){
-            lastNode = node.data
-        }
-        node = node.next
-     /*    if(node.next){
-        console.log(node.data)
-        }  */
-    } 
-    return lastNode
+    let lastNode = this.head
+    while(lastNode.next){
+        lastNode = lastNode.next
+    }
+return lastNode 
+
 } 
+/* 4. This method returns the first node of the linked list. */
+getFirst(){
+    let firstNode = list.head.data
+    return firstNode;
+}
+
 }
 
 /* Putting it all together
@@ -53,9 +52,12 @@ First, we create two list nodes, node1 and node2 and a pointer from node 1 to no
 
 let node1 = new ListNode(5)
 let node2 = new ListNode(6)
+let node3 = new ListNode(7)
+let node4 = new ListNode(2)
+
 node1.next = node2 
-/* let node3 = new ListNode(7)
-node2.next = node3  */
+node2.next = node3
+node3.next = node4
 
 /* Next, we'll create a Linked list with the node1. */
 
@@ -63,20 +65,8 @@ let list = new LinkedList(node1)
 
 /* Let's try to access the nodes in the list we just created. */
 
-/* console.log(list)
-console.log(list.head) 
-console.log(list.head.next)  */
-
-/*console.log(list.head.next.next.data) */
-
-
-/* console.log(list.head.next.data) //returns 5 */
-
-/* 1. size()
-This method returns the number of nodes present in the linked list. */
-
+console.log(list.head.next.data) // returns 6
 
 console.log(list.size())
 console.log(list)
-/* console.log(list.getLast()) */
 console.log(list.getLast())
